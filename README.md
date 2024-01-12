@@ -39,8 +39,7 @@ Standard scaling is applied to standardize the numerical features, ensuring that
 ## Step 4: Model Building
 ### Comparing Models
 - **Logistic Regression**
-
-Logistic Regression is used as a baseline model. The LogisticRegression class from scikit-learn is employed, with L1 regularization (Lasso) to potentially select important features. The model is trained on the training set and evaluated on the test set using metrics such as accuracy, precision, recall, and F1 score.
+  - Logistic Regression is used as a baseline model. The LogisticRegression class from scikit-learn is employed, with L1 regularization (Lasso) to potentially select important features. The model is trained on the training set and evaluated on the test set using metrics such as accuracy, precision, recall, and F1 score.
 
 - **Support Vector Machines (SVM)**
 
@@ -52,7 +51,7 @@ Another SVM model is created, this time using an RBF kernel. The same training a
 
 - **Random Forest Model**
 
-A Random Forest classifier is employed for more complex, ensemble-based modeling. The RandomForestClassifier class from scikit-learn is used with 100 decision trees and entropy as the criterion. The model is trained on the training set and evaluated on the test set, recording performance metrics.
+ - A Random Forest classifier is employed for more complex, ensemble-based modeling. The RandomForestClassifier class from scikit-learn is used with 100 decision trees and entropy as the criterion. The model is trained on the training set and evaluated on the test set, recording performance metrics.
 
 ### K-Fold Cross Validation
 K-Fold cross-validation is performed to assess the models' performance across multiple folds.
