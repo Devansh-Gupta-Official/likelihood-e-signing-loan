@@ -123,34 +123,20 @@ This helps assess the generalization performance of the models and identify pote
 
 
 **1. Grid Search for Random Forest**
-- Round 1: Entropy
+1. Round 1: Entropy
  - Best Accuracy: 63.45%
- - Optimal Hyperparameters:
-  - Bootstrap: True
-  - Criterion: Entropy
-  - Max Depth: None
-  - Max Features: 5
-  - Min Samples Leaf: 5
-  - Min Samples Split: 2
 
-- Round 2: Gini
+2. Round 2: Gini
  - Best Accuracy: 63.46%
- - Optimal Hyperparameters:
-  - Bootstrap: False
-  - Criterion: Gini
-  - Max Depth: None
-  - Max Features: 6
-  - Min Samples Leaf: 1
-  - Min Samples Split: 10
 
 **2. Testing New Parameters on Test Set**
-- Random Forest (Grid Search: Entropy)
+**1. Random Forest (Grid Search: Entropy)**
  - Accuracy: 63.07%
  - Precision: 64.52%
  - Recall: 69.71%
  - F1 Score: 67.02%
 
-- Random Forest (Grid Search: Gini)
+**2. Random Forest (Grid Search: Gini)**
  - Accuracy: 62.81%
  - Precision: 64.54%
  - Recall: 68.62%
