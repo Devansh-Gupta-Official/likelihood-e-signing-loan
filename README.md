@@ -6,7 +6,7 @@ This Jupyter Notebook (likelihood.ipynb) focuses on analyzing a dataset related 
 ## Step 1: Importing Libraries and Data
 The initial section involves importing essential Python libraries such as Pandas, NumPy, Matplotlib, and Seaborn. The dataset (P39-Financial-Data.csv) is loaded into a Pandas DataFrame (df).
 
-## Step 3: Data Visualization
+## Step 2: Data Visualization
 ### Cleaning the Data
 Descriptive statistics of the dataset are presented using the describe() method. Additionally, the presence of any missing values is checked using the isna().any() method, indicating that there are no missing values.
 
