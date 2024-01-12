@@ -20,3 +20,19 @@ A bar chart is created to display the correlation of each feature with the respo
 - **Correlation Matrix**
 A heatmap visualizes the correlation matrix, allowing for a comprehensive view of the pairwise relationships between features.
 
+## Data Preprocessing
+### Feature Engineering
+The months_employed column is identified as potentially inaccurate and is subsequently dropped from the dataset. Additionally, two columns (personal_account_m and personal_account_y) are combined into a new feature, personal_account_months, to simplify the data structure.
+
+### One Hot Encoding
+Categorical variables are encoded using one-hot encoding to facilitate the model training process.
+
+### Removing Extra Columns
+Columns such as entry_id and e_signed are dropped as they do not contribute to the predictive modeling.
+
+### Train-Test Split
+The dataset is split into training and testing sets using the train_test_split function from scikit-learn.
+
+### Feature Scaling
+Standard scaling is applied to standardize the numerical features, ensuring that they have a mean of 0 and a standard deviation of 1.
+
