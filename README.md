@@ -3,6 +3,14 @@
 ## Overview
 This Jupyter Notebook (likelihood.ipynb) focuses on analyzing a dataset related to e-signing of loans. The dataset (P39-Financial-Data.csv) includes various features such as age, pay schedule, home ownership status, income, risk scores, and the target variable indicating whether the loan was e-signed. The goal is to build and evaluate machine learning models to predict the likelihood of e-signing a loan. The notebook primarily covers data preprocessing, exploratory data analysis, feature engineering, model building, and evaluation.
 
+Leading companies work by analyzing the financial history of their loan applicants, and choosing whether or not the applicant is too risky to give the loan to. If the applicant is not, the comapny then determines the terms of the loan. To acquire such applicants, the company uses web/ app sources and lending peer companies, with P2P lending marketplaces. In this project, we are going to assess the quality of all such applicants that a company receives through such marketplaces.
+
+## Business Challenge
+The company has tasked you with creating a model that predicts whether or not these leads will complete the **e-sign** phase of the loan application. The company seeks to leverage this model to identify less quality applicants and experiment with giving them different onboarding screens.
+
+## Data
+We have access to financial data before the process begins. The data includes personal information like age, and time employed, etc. The comapny utilizes these feature to calculate risk scores based on many different risk factors. In this project, we are given these **risk scores**. Furthermore, the marketplace provides us with their own lead quality scores. We will leverage this data to predict if the user is likely to respond to our current onboarding process.
+
 ## Step 1: Importing Libraries and Data
 The initial section involves importing essential Python libraries such as Pandas, NumPy, Matplotlib, and Seaborn. The dataset (P39-Financial-Data.csv) is loaded into a Pandas DataFrame (df).
 
@@ -79,3 +87,72 @@ The best-performing Random Forest models from both rounds of grid search are eva
 The model evaluation results are saved to a CSV file (model_results.csv). The final predictions on the test set, along with user identifiers, are saved to another CSV file (final_results.csv).
 
 This notebook serves as a comprehensive guide to understanding the entire process of building, evaluating, and improving a predictive model for e-signing loans. The steps include data preprocessing, exploratory data analysis, feature engineering, model building, and hyperparameter tuning.
+
+
+## Results
+### Baseline Models
+**1. Logistic Regression (Lasso)**
+ - Accuracy: 56.20%
+ - Precision: 57.60%
+ - Recall: 70.59%
+ - F1 Score: 63.43%
+
+**2. SVM (Linear)**
+ - Accuracy: 56.84%
+ - Precision: 57.78%
+ - Recall: 73.55%
+ - F1 Score: 64.72%
+
+**3. SVM (RBF)**
+ - Accuracy: 59.16%
+ - Precision: 60.57%
+ - Recall: 69.09%
+ - F1 Score: 64.55%
+
+**4. Random Forest**
+ - Accuracy: 62.17%
+ - Precision: 64.01%
+ - Recall: 67.89%
+ - F1 Score: 65.89%
+
+### Model Improvement
+**K-Fold Cross Validation**
+
+The average accuracy across 10 folds: 63.00%
+This helps assess the generalization performance of the models and identify potential overfitting or underfitting.
+
+
+**1. Grid Search for Random Forest**
+- Round 1: Entropy
+ - Best Accuracy: 63.45%
+ - Optimal Hyperparameters:
+  - Bootstrap: True
+  - Criterion: Entropy
+  - Max Depth: None
+  - Max Features: 5
+  - Min Samples Leaf: 5
+  - Min Samples Split: 2
+- Round 2: Gini
+ - Best Accuracy: 63.46%
+ - Optimal Hyperparameters:
+  - Bootstrap: False
+  - Criterion: Gini
+  - Max Depth: None
+  - Max Features: 6
+  - Min Samples Leaf: 1
+  - Min Samples Split: 10
+
+**2. Testing New Parameters on Test Set**
+- Random Forest (Grid Search: Entropy)
+ - Accuracy: 63.07%
+ - Precision: 64.52%
+ - Recall: 69.71%
+ - F1 Score: 67.02%
+
+- Random Forest (Grid Search: Gini)
+ - Accuracy: 62.81%
+ - Precision: 64.54%
+ - Recall: 68.62%
+ - F1 Score: 66.52%
+
+
