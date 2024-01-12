@@ -36,3 +36,16 @@ The dataset is split into training and testing sets using the train_test_split f
 ### Feature Scaling
 Standard scaling is applied to standardize the numerical features, ensuring that they have a mean of 0 and a standard deviation of 1.
 
+## Model Building
+### Comparing Models
+Logistic Regression, Support Vector Machines (SVM) with linear and radial basis function (RBF) kernels, and Random Forest models are trained and evaluated. The evaluation metrics include accuracy, precision, recall, and F1 score.
+
+### K-Fold Cross Validation
+K-Fold cross-validation is performed to assess the models' performance across multiple folds.
+
+## Model Improvement
+### Grid Search
+Grid search is utilized to find optimal hyperparameters for the Random Forest model. Two rounds of grid search are conducted, first using entropy as the criterion and then using the Gini index.
+
+### Testing New Parameters on Test Set
+The best-performing Random Forest models from both grid search rounds are evaluated on the test set, and the results are compared.
