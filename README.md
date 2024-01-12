@@ -13,12 +13,21 @@ Descriptive statistics of the dataset are presented using the describe() method.
 ### Histograms
 Histograms of numerical columns are plotted to visualize the distribution of data, providing insights into the characteristics of different features.
 
+![image](https://github.com/Devansh-Gupta-Official/likelihood-e-signing-loan/assets/100591612/6bc58d5b-5577-46d8-8190-cae9dc2e7cea)
+
+
 ### Correlation Analysis
 - **Correlation Plot (with response variable)**
 A bar chart is created to display the correlation of each feature with the response variable (e_signed). This helps understand the linear relationship between features and the target variable.
 
+![image](https://github.com/Devansh-Gupta-Official/likelihood-e-signing-loan/assets/100591612/d9a59fce-5148-4fbc-a42e-30a71121e3e7)
+
+
 - **Correlation Matrix**
 A heatmap visualizes the correlation matrix, allowing for a comprehensive view of the pairwise relationships between features.
+
+![image](https://github.com/Devansh-Gupta-Official/likelihood-e-signing-loan/assets/100591612/77d76f57-b3cd-4869-8ec5-a41ad989a80d)
+
 
 ## Step 3: Data Preprocessing
 ### Feature Engineering
@@ -50,8 +59,7 @@ A Support Vector Machine (SVM) with a linear kernel is implemented using the SVC
 Another SVM model is created, this time using an RBF kernel. The same training and evaluation process is followed, and the model's performance is compared with the linear SVM.
 
 - **Random Forest Model**
-
- - A Random Forest classifier is employed for more complex, ensemble-based modeling. The RandomForestClassifier class from scikit-learn is used with 100 decision trees and entropy as the criterion. The model is trained on the training set and evaluated on the test set, recording performance metrics.
+  - A Random Forest classifier is employed for more complex, ensemble-based modeling. The RandomForestClassifier class from scikit-learn is used with 100 decision trees and entropy as the criterion. The model is trained on the training set and evaluated on the test set, recording performance metrics.
 
 ### K-Fold Cross Validation
 K-Fold cross-validation is performed to assess the models' performance across multiple folds.
