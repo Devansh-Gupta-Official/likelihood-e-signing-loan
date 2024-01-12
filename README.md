@@ -20,7 +20,7 @@ A bar chart is created to display the correlation of each feature with the respo
 - **Correlation Matrix**
 A heatmap visualizes the correlation matrix, allowing for a comprehensive view of the pairwise relationships between features.
 
-## Data Preprocessing
+## Step 3: Data Preprocessing
 ### Feature Engineering
 The months_employed column is identified as potentially inaccurate and is subsequently dropped from the dataset. Additionally, two columns (personal_account_m and personal_account_y) are combined into a new feature, personal_account_months, to simplify the data structure.
 
@@ -36,16 +36,21 @@ The dataset is split into training and testing sets using the train_test_split f
 ### Feature Scaling
 Standard scaling is applied to standardize the numerical features, ensuring that they have a mean of 0 and a standard deviation of 1.
 
-## Model Building
+## Step 4: Model Building
 ### Comparing Models
 Logistic Regression, Support Vector Machines (SVM) with linear and radial basis function (RBF) kernels, and Random Forest models are trained and evaluated. The evaluation metrics include accuracy, precision, recall, and F1 score.
 
 ### K-Fold Cross Validation
 K-Fold cross-validation is performed to assess the models' performance across multiple folds.
 
-## Model Improvement
+## Step 5: Model Improvement
 ### Grid Search
 Grid search is utilized to find optimal hyperparameters for the Random Forest model. Two rounds of grid search are conducted, first using entropy as the criterion and then using the Gini index.
 
 ### Testing New Parameters on Test Set
 The best-performing Random Forest models from both grid search rounds are evaluated on the test set, and the results are compared.
+
+## Step 6: Saving and Finalizing Results
+The model evaluation results are saved to a CSV file (model_results.csv). The final predictions on the test set, along with user identifiers, are saved to another CSV file (final_results.csv).
+
+This notebook serves as a comprehensive guide to understanding the entire process of building, evaluating, and improving a predictive model for e-signing loans. The steps include data preprocessing, exploratory data analysis, feature engineering, model building, and hyperparameter tuning.
