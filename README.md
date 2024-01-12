@@ -38,17 +38,32 @@ Standard scaling is applied to standardize the numerical features, ensuring that
 
 ## Step 4: Model Building
 ### Comparing Models
-Logistic Regression, Support Vector Machines (SVM) with linear and radial basis function (RBF) kernels, and Random Forest models are trained and evaluated. The evaluation metrics include accuracy, precision, recall, and F1 score.
+- **Logistic Regression**
+Logistic Regression is used as a baseline model. The LogisticRegression class from scikit-learn is employed, with L1 regularization (Lasso) to potentially select important features. The model is trained on the training set and evaluated on the test set using metrics such as accuracy, precision, recall, and F1 score.
+
+- **Support Vector Machines (SVM)**
+**1. SVM with Linear Kernel**
+A Support Vector Machine (SVM) with a linear kernel is implemented using the SVC class from scikit-learn. The model is trained and evaluated similarly to the Logistic Regression model, and performance metrics are recorded.
+
+**2. SVM with Radial Basis Function (RBF) Kernel**
+Another SVM model is created, this time using an RBF kernel. The same training and evaluation process is followed, and the model's performance is compared with the linear SVM.
+
+- **Random Forest Model**
+A Random Forest classifier is employed for more complex, ensemble-based modeling. The RandomForestClassifier class from scikit-learn is used with 100 decision trees and entropy as the criterion. The model is trained on the training set and evaluated on the test set, recording performance metrics.
 
 ### K-Fold Cross Validation
 K-Fold cross-validation is performed to assess the models' performance across multiple folds.
 
 ## Step 5: Model Improvement
-### Grid Search
-Grid search is utilized to find optimal hyperparameters for the Random Forest model. Two rounds of grid search are conducted, first using entropy as the criterion and then using the Gini index.
+### Grid Search for Random Forest
+- **Round 1: Entropy**
+Grid search is conducted to find the optimal hyperparameters for the Random Forest model. Various hyperparameters, such as max_depth, max_features, min_samples_split, min_samples_leaf, bootstrap, and criterion (set to entropy), are explored using the GridSearchCV class from scikit-learn. The best-performing set of hyperparameters is recorded.
+
+- **Round 2: Gini**
+A second round of grid search is performed, this time using Gini as the criterion. The same hyperparameters are explored, and the optimal set is identified.
 
 ### Testing New Parameters on Test Set
-The best-performing Random Forest models from both grid search rounds are evaluated on the test set, and the results are compared.
+The best-performing Random Forest models from both rounds of grid search are evaluated on the test set. The results are compared to determine the impact of the hyperparameter tuning on the model's performance.
 
 ## Step 6: Saving and Finalizing Results
 The model evaluation results are saved to a CSV file (model_results.csv). The final predictions on the test set, along with user identifiers, are saved to another CSV file (final_results.csv).
